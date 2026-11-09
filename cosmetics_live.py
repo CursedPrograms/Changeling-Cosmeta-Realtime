@@ -1,13 +1,13 @@
 """cosmetics_live.py - Changeling Cosmeta Realtime: makeup, hair colour and beards, live on your webcam.
 
     run.bat                  the window (the webcam)
-    run.bat --phone          your phone's camera instead (a QR code in the window; CopyCat Realtime's phone page)
+    run.bat --phone          your phone's camera instead (a QR code in the window; Simia Realtime's phone page)
     run.bat --source me.jpg  a photo or video instead of the webcam (for trying it out)
 
 Every frame: the face is read (BiSeNet on the graphics card, Face Mesh following it), and Changeling Cosmeta'
 own looks are painted on (the same code as for photos), then the editor's brightness, contrast, warmth, vignette...
-Out to the call through OBS Virtual Camera. It runs in Changeling CopyCat Realtime's environment and uses
-Changeling Cosmeta' code: both next to this folder (as in Changeling Studio), or in COPYCAT_REALTIME_DIR and
+Out to the call through OBS Virtual Camera. It runs in Changeling Simia Realtime's environment and uses
+Changeling Cosmeta' code: both next to this folder (as in Changeling Studio), or in SIMIA_REALTIME_DIR and
 CHANGELING_COSMETA_DIR.
 """
 import argparse
@@ -27,7 +27,7 @@ from PIL import Image, ImageTk
 HERE = os.path.dirname(os.path.abspath(__file__))
 STUDIO = os.path.dirname(HERE)
 COSMETICS = os.environ.get("CHANGELING_COSMETA_DIR") or os.path.join(STUDIO, "Changeling-Cosmeta")
-COPYCAT = os.environ.get("COPYCAT_REALTIME_DIR") or os.path.join(STUDIO, "Changeling-CopyCat-Realtime")
+SIMIA = os.environ.get("SIMIA_REALTIME_DIR") or os.path.join(STUDIO, "Changeling-Simia-Realtime")
 sys.path.insert(0, COSMETICS)
 import torch  # noqa: E402,F401 - first, so onnxruntime and MediaPipe find CUDA's DLLs
 from cosmetics.adjust import Adjust  # noqa: E402
@@ -66,9 +66,9 @@ def set_logo(root):
 
 
 def open_source(args):
-    """read() -> a BGR frame (or None), as CopyCat Realtime does; --phone serves its phone page."""
+    """read() -> a BGR frame (or None), as Simia Realtime does; --phone serves its phone page."""
     if args.phone:
-        sys.path.insert(0, COPYCAT)
+        sys.path.insert(0, SIMIA)
         from phone import Phone
         phone = Phone(args.phone_port).start()
         return phone.read, phone

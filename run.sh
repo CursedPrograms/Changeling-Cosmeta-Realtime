@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Changeling Cosmetics Realtime runs in Changeling CopyCat Realtime's environment with Changeling Cosmetics' code:
+# Changeling Cosmeta Realtime runs in Changeling CopyCat Realtime's environment with Changeling Cosmeta' code:
 # both next to this folder (as in Changeling Studio). Missing ones are fetched here.
 set -e
 cd "$(dirname "$0")"
 STUDIO="$(cd .. && pwd)"
-for a in Cosmetics CopyCat-Realtime; do
+for a in Cosmeta CopyCat-Realtime; do
     if [ ! -d "$STUDIO/Changeling-$a" ]; then
         echo "Getting Changeling $a ..."
         git clone "https://github.com/CursedPrograms/Changeling-$a" "$STUDIO/Changeling-$a"

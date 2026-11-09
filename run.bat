@@ -1,10 +1,10 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-rem Changeling Cosmetics Realtime runs in Changeling CopyCat Realtime's environment with Changeling Cosmetics' code:
+rem Changeling Cosmeta Realtime runs in Changeling CopyCat Realtime's environment with Changeling Cosmeta' code:
 rem both next to this folder (as in Changeling Studio). Missing ones are fetched here.
 set "STUDIO=%~dp0.."
-for %%A in (Cosmetics CopyCat-Realtime) do (
+for %%A in (Cosmeta CopyCat-Realtime) do (
     if not exist "%STUDIO%\Changeling-%%A" (
         echo Getting Changeling %%A ...
         git clone https://github.com/CursedPrograms/Changeling-%%A "%STUDIO%\Changeling-%%A" || goto :error

@@ -1,14 +1,14 @@
-"""cosmetics_live.py - Changeling Cosmetics Realtime: makeup, hair colour and beards, live on your webcam.
+"""cosmetics_live.py - Changeling Cosmeta Realtime: makeup, hair colour and beards, live on your webcam.
 
     run.bat                  the window (the webcam)
     run.bat --phone          your phone's camera instead (a QR code in the window; CopyCat Realtime's phone page)
     run.bat --source me.jpg  a photo or video instead of the webcam (for trying it out)
 
-Every frame: the face is read (BiSeNet on the graphics card, Face Mesh following it), and Changeling Cosmetics'
+Every frame: the face is read (BiSeNet on the graphics card, Face Mesh following it), and Changeling Cosmeta'
 own looks are painted on (the same code as for photos), then the editor's brightness, contrast, warmth, vignette...
 Out to the call through OBS Virtual Camera. It runs in Changeling CopyCat Realtime's environment and uses
-Changeling Cosmetics' code: both next to this folder (as in Changeling Studio), or in COPYCAT_REALTIME_DIR and
-CHANGELING_COSMETICS_DIR.
+Changeling Cosmeta' code: both next to this folder (as in Changeling Studio), or in COPYCAT_REALTIME_DIR and
+CHANGELING_COSMETA_DIR.
 """
 import argparse
 import os
@@ -26,7 +26,7 @@ from PIL import Image, ImageTk
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STUDIO = os.path.dirname(HERE)
-COSMETICS = os.environ.get("CHANGELING_COSMETICS_DIR") or os.path.join(STUDIO, "Changeling-Cosmetics")
+COSMETICS = os.environ.get("CHANGELING_COSMETA_DIR") or os.path.join(STUDIO, "Changeling-Cosmeta")
 COPYCAT = os.environ.get("COPYCAT_REALTIME_DIR") or os.path.join(STUDIO, "Changeling-CopyCat-Realtime")
 sys.path.insert(0, COSMETICS)
 import torch  # noqa: E402,F401 - first, so onnxruntime and MediaPipe find CUDA's DLLs
@@ -36,8 +36,8 @@ from cosmetics.live import Live  # noqa: E402
 from cosmetics.looks import (BLUSH_COLOURS, BROW_COLOURS, HAIR_COLOURS, LINER_COLOURS, LIP_COLOURS,  # noqa: E402
                              SHADOW_COLOURS, Look)
 
-NAME = "Changeling Cosmetics Realtime"
-GITHUB = "https://github.com/CursedPrograms/Changeling-Cosmetics-Realtime"
+NAME = "Changeling Cosmeta Realtime"
+GITHUB = "https://github.com/CursedPrograms/Changeling-Cosmeta-Realtime"
 KOFI = "https://ko-fi.com/cursedentertainment"
 PINK = "#e0408a"
 IMAGE_EXT = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".jfif")
@@ -145,7 +145,7 @@ class Window:
             ctk.CTkLabel(side, image=ctk.CTkImage(Image.open(logo), size=(56, 56)), text="").pack(anchor="w", padx=12, pady=(10, 0))
         ctk.CTkLabel(side, text="CHANGELING", text_color="gray55",
                      font=ctk.CTkFont(size=11, weight="bold")).pack(anchor="w", padx=12, pady=(12, 0))
-        ctk.CTkLabel(side, text="Cosmetics Realtime", font=ctk.CTkFont(size=24, weight="bold"),
+        ctk.CTkLabel(side, text="Cosmeta Realtime", font=ctk.CTkFont(size=24, weight="bold"),
                      text_color=PINK).pack(anchor="w", padx=12)
         ctk.CTkLabel(side, text="makeup, hair colour and beards, live on a call", text_color="gray60",
                      wraplength=290, justify="left").pack(anchor="w", padx=12)

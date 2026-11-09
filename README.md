@@ -18,8 +18,8 @@ Makeup, hair colour and beards, live on a video call. Changeling Cosmeta' looks,
 ![Before and after: three people with live looks](assets/realtime_samples.jpg)
 
 *Part of the Changeling family, all together in [Changeling Studio](https://github.com/CursedPrograms/Changeling-Studio):
-[Simia](https://github.com/CursedPrograms/Changeling-Simia) ·
-[Simia Realtime](https://github.com/CursedPrograms/Changeling-Simia-Realtime) ·
+[Imago](https://github.com/CursedPrograms/Changeling-Imago) ·
+[Imago Realtime](https://github.com/CursedPrograms/Changeling-Imago-Realtime) ·
 [Tiresias](https://github.com/CursedPrograms/Changeling-Tiresias) (gender) ·
 [Chronos](https://github.com/CursedPrograms/Changeling-Chronos) (age) ·
 [Natio](https://github.com/CursedPrograms/Changeling-Natio) (where in the world) ·
@@ -44,15 +44,15 @@ second at 1280 x 720.
 
 1. Python 3.11, an NVIDIA GPU, a webcam; [OBS](https://obsproject.com/) for its Virtual Camera.
 2. Start `run.bat` (or `run.ps1`, `run.sh`). It runs in
-   [Changeling Simia Realtime](https://github.com/CursedPrograms/Changeling-Simia-Realtime)'s environment with
+   [Changeling Imago Realtime](https://github.com/CursedPrograms/Changeling-Imago-Realtime)'s environment with
    Changeling Cosmeta' code, both next to this folder as in
    [Changeling Studio](https://github.com/CursedPrograms/Changeling-Studio); missing ones are cloned there, and
-   Simia Realtime is set up the first time. BiSeNet's weights (50 MB) are taken from `F:\AIModels\face` or
+   Imago Realtime is set up the first time. BiSeNet's weights (50 MB) are taken from `F:\AIModels\face` or
    HairFastGAN's models if they're on the PC, else downloaded once.
 3. Switch on what you want; pick its colour; slide its strength. **Before | after** shows both in the window
    (the call gets only the after). In the call, pick **OBS Virtual Camera**.
 4. **Your phone as the camera:** `run_server.bat` (or `run.bat --phone`) shows a QR code. Scan it on the same
-   WiFi, accept the certificate warning once and press Start. It's Simia Realtime's phone page.
+   WiFi, accept the certificate warning once and press Start. It's Imago Realtime's phone page.
 
 ![The window](assets/window.png)
 

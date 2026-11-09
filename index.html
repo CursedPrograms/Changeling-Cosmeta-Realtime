@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changeling Cosmetics Realtime: makeup, hair colour and beards, live on a video call</title>
+<meta name="description" content="Changeling Cosmetics' looks, painted on every frame of your webcam (or your phone's camera): hair colour, lips, eyeshadow, eyeliner, blush, brows, smooth skin, beard colour, stubble and a shave, each with its colour and strength, and the editor's brightness, contrast, warmth and vignette, out to the call through OBS Virtual Camera. Part of the Changeling family.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Changeling Cosmetics Realtime">
+<meta property="og:description" content="Makeup, hair colour and beards, live on a video call.">
+<meta property="og:image" content="assets/realtime_samples.jpg">
+<link rel="icon" href="https://cursedprograms.github.io/Changeling-Studio/site/icon.svg">
+<link rel="stylesheet" href="https://cursedprograms.github.io/Changeling-Studio/site/changeling.css">
+</head>
+<body data-changeling="Cosmetics Realtime">
+
+<header>
+  <div class="wrap">
+    <img src="https://cursedprograms.github.io/Changeling-Studio/site/logo.svg" alt="The Changeling logo" width="110" height="110">
+    <div class="eyebrow">Changeling</div>
+    <h1>Cosmetics Realtime</h1>
+    <p class="tagline">Makeup, hair colour and beards, live on a video call</p>
+    <p class="lede">Changeling Cosmetics' looks, painted on every frame of your webcam (or your phone's camera): hair colour, lips, eyeshadow, eyeliner, blush, brows, smooth skin, beard colour, stubble and a shave, each with its colour and strength, and the editor's brightness, contrast, warmth and vignette, out to the call through OBS Virtual Camera.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/CursedPrograms/Changeling-Cosmetics-Realtime">View on GitHub</a>
+      <a class="btn" href="#use">Use it</a>
+      <a class="btn" href="#family">The Changeling family</a>
+    </div>
+    <div class="tags">
+      <span class="tag">BiSeNet</span><span class="tag">Face Mesh</span><span class="tag">OBS Virtual Camera</span>
+      <span class="tag">CUDA</span><span class="tag">Python</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="samples">
+    <h2>What it looks like</h2>
+    <p>Before, and with a look painted on live. Every face is an AI-generated person who doesn't exist. Click to enlarge.</p>
+    <figure class="sheet"><img id="sheet" src="assets/realtime_samples.jpg" alt="Before and after: three people with live looks" loading="lazy"></figure>
+  </section>
+
+  <section id="use">
+    <h2>Use it</h2>
+    <ol class="steps">
+      <li>Python 3.9 - 3.12, an NVIDIA GPU (4 GB is enough), a webcam; OBS for its Virtual Camera.</li>
+      <li>Start <code>run.bat</code> (or <code>run.ps1</code>, <code>run.sh</code>). It fetches Changeling Cosmetics and Changeling CopyCat Realtime next to it if they're missing.</li>
+      <li>Switch on a look, pick its colour and strength; in the call, pick OBS Virtual Camera. <code>run_server.bat</code> uses your phone's camera.</li>
+    </ol>
+    <figure class="sheet"><img src="assets/window.png" alt="The window" loading="lazy"></figure>
+  </section>
+
+  <section id="why">
+    <h2>How it's live</h2>
+    <p>BiSeNet reads the face on the graphics card in a few hundredths of a second, Face Mesh follows it, and Changeling
+      Cosmetics' own looks are painted around the face only: about 13 frames a second at 1280 x 720 on a 6 GB card.</p>
+  </section>
+
+  <section id="qr">
+    <h2>This page on your phone</h2>
+    <figure class="sheet"><img src="assets/site-qr.png" alt="QR code to this page" width="220" loading="lazy"></figure>
+  </section>
+
+  <section id="family"></section>
+</main>
+
+<div id="lightbox" class="lightbox" hidden><img alt=""></div>
+
+<footer id="site-footer">&copy; Cursed Entertainment 2026</footer>
+<script src="https://cursedprograms.github.io/Changeling-Studio/site/family.js"></script>
+<script src="https://cursedprograms.github.io/RIFT/site/footer.js"></script>
+</body>
+</html>

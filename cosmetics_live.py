@@ -39,7 +39,7 @@ from cosmetics.looks import (BLUSH_COLOURS, BROW_COLOURS, HAIR_COLOURS, LINER_CO
 NAME = "Changeling Cosmeta Realtime"
 GITHUB = "https://github.com/CursedPrograms/Changeling-Cosmeta-Realtime"
 KOFI = "https://ko-fi.com/cursedentertainment"
-PINK = "#e0408a"
+PINK = "#007bb7"
 IMAGE_EXT = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".jfif")
 # (the Look's part, its name in the window, its colours or None)
 PARTS = [("hair", "Hair colour", HAIR_COLOURS), ("lips", "Lips", LIP_COLOURS), ("eyeshadow", "Eyeshadow", SHADOW_COLOURS),
@@ -154,7 +154,7 @@ class Window:
             self._section(side, "Phone")
             qr = Image.fromarray(self.phone.qr(170))
             ctk.CTkLabel(side, image=ctk.CTkImage(qr, size=(170, 170)), text="").pack(anchor="w", padx=12, pady=4)
-            ctk.CTkLabel(side, text=self.phone.url, text_color=("#c2186b", "#f29cc0")).pack(anchor="w", padx=12)
+            ctk.CTkLabel(side, text=self.phone.url, text_color=("#005184", "#34a9e3")).pack(anchor="w", padx=12)
 
         self._section(side, "Makeup and hair")
         for key, label, colours in PARTS:
@@ -184,7 +184,7 @@ class Window:
         links = ctk.CTkFrame(foot, fg_color="transparent")
         links.pack(anchor="w")
         for text, url in (("GitHub", GITHUB), ("Ko-fi", KOFI)):
-            link = ctk.CTkLabel(links, text=text, text_color=("#c2186b", "#f29cc0"), cursor="hand2")
+            link = ctk.CTkLabel(links, text=text, text_color=("#005184", "#34a9e3"), cursor="hand2")
             link.pack(side="left", padx=(0, 14))
             link.bind("<Button-1>", lambda e, u=url: webbrowser.open(u))
         ctk.CTkLabel(foot, text="© Cursed Entertainment 2026", text_color="gray45").pack(anchor="w")
